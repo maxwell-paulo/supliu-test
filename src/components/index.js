@@ -1,3 +1,4 @@
-import DeleteButton from "./DeleteButton";
+import DeleteAlbumButton from "./DeleteAlbumButton";
+import DeleteTrackButton from "./DeleteTrackButton";
 
-export { DeleteButton };
+export { DeleteAlbumButton, DeleteTrackButton };
