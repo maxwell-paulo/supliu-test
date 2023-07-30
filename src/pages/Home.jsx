@@ -1,5 +1,35 @@
 import { useEffect, useState } from "react";
 import { api } from "../services";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  background-color: white;
+  opacity: 70%;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+  padding: 20px;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 30px;
+`;
+
+const StyledtrackInfos = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+
+  & > div {
+    display: flex;
+    gap: 35px;
+  }
+`;
 
 function Home() {
   const [albuns, setAlbuns] = useState([]);
@@ -18,27 +48,38 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <StyledContainer>
       {albuns.map((currentAlbum, index) => {
         return (
           <section key={index}>
             <h2>
               Álbum: {currentAlbum.name}, {currentAlbum.year}
             </h2>
-            <p>Nº Faixa Duração</p>
+            <StyledtrackInfos key={index}>
+              <div>
+                <p>Nº</p>
+                <p>Faixa</p>
+              </div>
+              <p>Duração</p>
+            </StyledtrackInfos>
             {currentAlbum.tracks.map((track, index) => {
               return (
-                <div key={index}>
+                <StyledtrackInfos key={index}>
+                  <div>
+                    <p>{track.number}</p>
+                    <p>{track.title} </p>
+                  </div>
                   <p>
-                    {track.number} {track.title} {track.duration / 60}
+                    {Math.floor(track.duration / 60)}:
+                    {String(track.duration % 60).padEnd(2, "0")}
                   </p>
-                </div>
+                </StyledtrackInfos>
               );
             })}
           </section>
         );
       })}
-    </div>
+    </StyledContainer>
   );
 }
 
