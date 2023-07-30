@@ -2,7 +2,7 @@ import axios from "axios";
 import { headers } from "../services";
 import PropTypes from "prop-types";
 
-function DeleteButton({ id }) {
+function DeleteAlbumButton({ id }) {
   async function handleDelete() {
     try {
       await axios.delete(`https://tiao.supliu.com.br/api/album/${id}`, headers);
@@ -20,8 +20,8 @@ function DeleteButton({ id }) {
   );
 }
 
-DeleteButton.propTypes = {
+DeleteAlbumButton.propTypes = {
   id: PropTypes.number.isRequired,
 };
 
-export default DeleteButton;
+export default DeleteAlbumButton;
