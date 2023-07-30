@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { api } from "../services";
-import { DeleteButton } from "../components";
 
 function Home() {
   const [albuns, setAlbuns] = useState([]);
@@ -36,7 +35,6 @@ function Home() {
                 </div>
               );
             })}
-            <DeleteButton id={currentAlbum.id} />
           </section>
         );
       })}
