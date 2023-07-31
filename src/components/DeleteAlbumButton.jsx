@@ -4,8 +4,18 @@ import styled from "styled-components";
 import { useNavigate } from "react-router";
 
 const StyledButton = styled.button`
-  background-color: blue;
-  opacity: 100%;
+  background-color: #59adea;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 100;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: red;
+  }
 `;
 
 function DeleteAlbumButton() {
