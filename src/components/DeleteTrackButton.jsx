@@ -1,13 +1,18 @@
 import axios from "axios";
 import { headers } from "../services";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router";
 
 function DeleteTrackButton({ id }) {
+  const navigate = useNavigate();
+
   async function handleDelete() {
     try {
-      await axios.delete(`https://tiao.supliu.com.br/api/track/${id}`, headers);
+      await axios.delete(`https://tiao.supliu.com.br/api/track/${id}`, {
+        headers,
+      });
 
-      location.reload();
+      navigate(0);
     } catch (error) {
       console.log(error);
     }

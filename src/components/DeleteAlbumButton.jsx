@@ -1,21 +1,29 @@
 import axios from "axios";
 import { headers } from "../services";
-import PropTypes from "prop-types";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 
 const StyledButton = styled.button`
   background-color: blue;
   opacity: 100%;
 `;
 
-function DeleteAlbumButton({ id }) {
+function DeleteAlbumButton() {
+  const navigate = useNavigate();
+  const queryParams = new URLSearchParams(location.search);
+  const id = Number(queryParams.get("id"));
+
   async function handleDelete() {
     try {
-      await axios.delete(`https://tiao.supliu.com.br/api/album/${id}`, headers);
+      console.log(id);
+      await axios.delete(`https://tiao.supliu.com.br/api/album/${id}`, {
+        headers,
+      });
 
-      location.reload();
+      navigate("/");
     } catch (error) {
       console.log(error);
+      navigate("/");
     }
   }
 
@@ -25,9 +33,5 @@ function DeleteAlbumButton({ id }) {
     </StyledButton>
   );
 }
-
-DeleteAlbumButton.propTypes = {
-  id: PropTypes.number.isRequired,
-};
 
 export default DeleteAlbumButton;
