@@ -1,6 +1,12 @@
 import axios from "axios";
 import { headers } from "../services";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  background-color: blue;
+  opacity: 100%;
+`;
 
 function DeleteAlbumButton({ id }) {
   async function handleDelete() {
@@ -14,9 +20,9 @@ function DeleteAlbumButton({ id }) {
   }
 
   return (
-    <button type="button" onClick={handleDelete}>
-      Delete
-    </button>
+    <StyledButton type="button" onClick={handleDelete}>
+      Delete Album
+    </StyledButton>
   );
 }
 
