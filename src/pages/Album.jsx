@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { api } from "../services";
+import { Mainbar } from "../components";
 import styled from "styled-components";
-import { Mainbar, SearchBar } from "../components";
+import { DeleteAlbumButton, DeleteTrackButton } from "../components";
 
 const StyledContainer = styled.div`
   background-color: white;
@@ -32,15 +33,15 @@ const StyledtrackInfos = styled.div`
   }
 `;
 
-function Home() {
-  const [albuns, setAlbuns] = useState([]);
+function Album() {
+  const [album, setAlbum] = useState([]);
 
   useEffect(() => {
     async function fetchAlbuns() {
       try {
         const response = await api.readAlbums();
 
-        setAlbuns([...response.data.data]);
+        setAlbum(...response.data.data);
       } catch (error) {
         console.log(error);
       }
@@ -52,22 +53,22 @@ function Home() {
     <>
       <Mainbar />
       <StyledContainer>
-        <SearchBar />
-        {albuns.map((currentAlbum, index) => {
-          return (
-            <section key={index}>
-              <h2>
-                Álbum: {currentAlbum.name}, {currentAlbum.year}
-              </h2>
-              <StyledtrackInfos key={index}>
-                <div>
-                  <p>Nº</p>
-                  <p>Faixa</p>
-                </div>
-                <p>Duração</p>
-              </StyledtrackInfos>
-              {currentAlbum.tracks.map((track, index) => {
-                return (
+        <section>
+          <h2>
+            Álbum: {album.name} {album.year}
+          </h2>
+          <DeleteAlbumButton />
+          <StyledtrackInfos>
+            <div>
+              <p>Nº</p>
+              <p>Faixa</p>
+            </div>
+            <p>Duração</p>
+          </StyledtrackInfos>
+          {album.tracks &&
+            album.tracks.map((track, index) => {
+              return (
+                <>
                   <StyledtrackInfos key={index}>
                     <div>
                       <p>{track.number}</p>
@@ -78,14 +79,14 @@ function Home() {
                       {String(track.duration % 60).padEnd(2, "0")}
                     </p>
                   </StyledtrackInfos>
-                );
-              })}
-            </section>
-          );
-        })}
+                  <DeleteTrackButton id={track.id} />
+                </>
+              );
+            })}
+        </section>
       </StyledContainer>
     </>
   );
 }
 
-export default Home;
+export default Album;
