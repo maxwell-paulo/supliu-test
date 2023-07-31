@@ -15,13 +15,9 @@ function CreateAlbum() {
     event.preventDefault();
     const headers = {
       Authorization: "maxpaulo.mps@gmail.com",
-      "Content-Type": "application/json",
     };
     try {
-      console.log(album);
-      // await axios.post("https://tiao.supliu.com.br/api/album/", album, {
-      //   headers,
-      // });
+      await axios.post("https://tiao.supliu.com.br/api/album/", headers);
     } catch (error) {
       console.log(error);
     }

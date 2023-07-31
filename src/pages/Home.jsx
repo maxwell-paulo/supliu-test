@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../services";
 import styled from "styled-components";
-import { Mainbar, SearchBar } from "../components";
+import { Mainbar } from "../components";
 
 const StyledContainer = styled.div`
   background-color: white;
@@ -50,9 +50,8 @@ function Home() {
 
   return (
     <>
-      <Mainbar />
+      <Mainbar></Mainbar>
       <StyledContainer>
-        <SearchBar />
         {albuns.map((currentAlbum, index) => {
           return (
             <section key={index}>

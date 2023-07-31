@@ -14,9 +14,11 @@ async function genericRequest(axiosFn, ...params) {
 
 const api = {
   async readAlbums() {
-    return genericRequest(axios.get, "https://tiao.supliu.com.br/api/album", {
-      headers,
-    });
+    return genericRequest(
+      axios.get,
+      "https://tiao.supliu.com.br/api/album",
+      headers
+    );
   },
 };
 

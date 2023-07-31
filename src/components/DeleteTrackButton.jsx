@@ -15,7 +15,7 @@ function DeleteTrackButton({ id }) {
 
   return (
     <button type="button" onClick={handleDelete}>
-      Delete Track
+      Delete
     </button>
   );
 }
