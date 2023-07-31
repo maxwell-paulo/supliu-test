@@ -4,10 +4,19 @@ import { Mainbar } from "../components";
 import styled from "styled-components";
 import { DeleteAlbumButton, DeleteTrackButton } from "../components";
 
-const StyledContainer = styled.div`
+const Background = styled.div`
   background-color: white;
   opacity: 70%;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%);
+  height: 65vh;
+  width: 90vw;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+`;
+
+const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,12 +61,13 @@ function Album() {
   return (
     <>
       <Mainbar />
+      <Background />
       <StyledContainer>
         <section>
           <h2>
             Álbum: {album.name} {album.year}
           </h2>
-          <DeleteAlbumButton />
+          <DeleteAlbumButton disabled />
           <StyledtrackInfos>
             <div>
               <p>Nº</p>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../services";
 import styled from "styled-components";
-import { Mainbar, SearchBar } from "../components";
+import { Mainbar, SearchBar, AddAlbumButton } from "../components";
 
 const StyledContainer = styled.div`
   background-color: white;
@@ -84,6 +84,7 @@ function Home() {
           );
         })}
       </StyledContainer>
+      <AddAlbumButton />
     </>
   );
 }
