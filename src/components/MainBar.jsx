@@ -24,7 +24,9 @@ function Mainbar() {
 
   return (
     <StyledContainer>
-      <img src={logo} alt="This is an image" />
+      <a href="/">
+        <img src={logo} alt="This is an image" />
+      </a>
       <p>Discografia</p>
     </StyledContainer>
   );
