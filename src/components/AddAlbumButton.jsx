@@ -1,24 +1,5 @@
-import styled from "styled-components";
 import { useNavigate } from "react-router";
-
-const StyledButton = styled.button`
-  background-color: #59adea;
-  max-width: 400px;
-  padding: 10px 20px;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  color: white;
-  font-weight: 100;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: lightgreen;
-  }
-`;
+import { StyledAddButton } from "./StyledComponents";
 
 function AddAlbumButton() {
   const navigate = useNavigate();
@@ -32,9 +13,9 @@ function AddAlbumButton() {
   }
 
   return (
-    <StyledButton type="button" onClick={handleSubmit}>
+    <StyledAddButton type="button" onClick={handleSubmit}>
       Add new Album
-    </StyledButton>
+    </StyledAddButton>
   );
 }
 

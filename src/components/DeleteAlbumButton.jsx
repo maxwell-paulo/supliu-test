@@ -1,22 +1,7 @@
 import axios from "axios";
 import { headers } from "../services";
-import styled from "styled-components";
 import { useNavigate } from "react-router";
-
-const StyledButton = styled.button`
-  background-color: #59adea;
-  padding: 10px 20px;
-  color: white;
-  font-weight: 100;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: red;
-  }
-`;
+import { StyleDeleteButton } from "./StyledComponents";
 
 function DeleteAlbumButton() {
   const navigate = useNavigate();
@@ -38,9 +23,9 @@ function DeleteAlbumButton() {
   }
 
   return (
-    <StyledButton type="button" onClick={handleDelete}>
+    <StyleDeleteButton type="button" onClick={handleDelete}>
       Delete Album
-    </StyledButton>
+    </StyleDeleteButton>
   );
 }
 
