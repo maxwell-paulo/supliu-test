@@ -38,6 +38,22 @@ const api = {
       }
     );
   },
+
+  async CreateAlbum() {
+    return genericRequest(
+      axios.post("https://tiao.supliu.com.br/api/album/", {
+        headers,
+      })
+    );
+  },
+
+  async CreateTrack() {
+    return genericRequest(
+      axios.post("https://tiao.supliu.com.br/api/track/", {
+        headers,
+      })
+    );
+  },
 };
 
 export default api;

@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useState } from "react";
-import { headers } from "../services";
+import { api } from "../services";
 import {
   CreateBackground,
   CreateStyledContainer,
@@ -21,9 +20,7 @@ function CreateAlbum() {
     event.preventDefault();
 
     try {
-      await axios.post("https://tiao.supliu.com.br/api/album/", album, {
-        headers,
-      });
+      await api.CreateAlbum();
     } catch (error) {
       console.log(error);
     }

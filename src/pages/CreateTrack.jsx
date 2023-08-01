@@ -1,5 +1,4 @@
-import axios from "axios";
-import { headers } from "../services";
+import { api } from "../services";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import {
@@ -48,9 +47,8 @@ function CreateTrack() {
     event.preventDefault();
 
     try {
-      await axios.post("https://tiao.supliu.com.br/api/track/", track, {
-        headers,
-      });
+      await api.CreateTrack();
+
       navigate(`/serched-album?id=${id}`);
     } catch (error) {
       console.log(error);
