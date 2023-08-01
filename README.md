@@ -1,8 +1,57 @@
-# React + Vite
+# README - Supliu Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
 
-Currently, two official plugins are available:
+Este é um guia rápido para rodar localmente a aplicação React. Certifique-se de seguir os passos abaixo para executar corretamente a aplicação em sua máquina.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
+
+- Node.js (https://nodejs.org)
+- npm (Normalmente vem com o Node.js)
+
+## Passo 1 - Clonar o repositório
+
+Primeiro, clone este repositório em sua máquina local:
+
+```
+git clone <URL_DO_REPOSITORIO>
+```
+
+Substitua `<URL_DO_REPOSITORIO>` pela URL do repositório da aplicação React.
+
+## Passo 2 - Instalar as dependências
+
+Navegue até o diretório da aplicação e instale as dependências usando o npm:
+
+```
+cd nome-do-diretorio-da-aplicacao
+npm install
+```
+
+## Passo 3 - Executar a aplicação
+
+Para rodar a aplicação localmente, utilize o comando:
+
+```
+npm run dev
+```
+
+A aplicação será iniciada e estará disponível no endereço http://localhost:5173.
+
+## Passo 4 - Acessar a aplicação
+
+Abra o seu navegador e acesse o seguinte endereço:
+
+```
+http://localhost:5173
+```
+
+Agora você deverá visualizar a aplicação React em execução.
+
+## Conclusão
+
+Seguindo esses passos, você conseguirá rodar a aplicação React localmente em sua máquina e acessá-la no endereço http://localhost:5173.
+
+Caso tenha algum problema ou dúvida, sinta-se à vontade para entrar em contato com os desenvolvedores da aplicação. Aproveite a experiência e divirta-se!
