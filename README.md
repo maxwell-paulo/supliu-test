@@ -16,10 +16,8 @@ Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
 Primeiro, clone este repositório em sua máquina local:
 
 ```
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/maxwell-paulo/supliu-test.git
 ```
-
-Substitua `<URL_DO_REPOSITORIO>` pela URL do repositório da aplicação React.
 
 ## Passo 2 - Instalar as dependências
 
