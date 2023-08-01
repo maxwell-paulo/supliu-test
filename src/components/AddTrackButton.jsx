@@ -3,7 +3,11 @@ import { useNavigate } from "react-router";
 
 const StyledButton = styled.button`
   background-color: #59adea;
+  max-width: 400px;
   padding: 10px 20px;
+  position: absolute;
+  top: 80%;
+  left: 85%;
   color: white;
   font-weight: 100;
   border-radius: 20px;
@@ -12,7 +16,7 @@ const StyledButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: red;
+    background-color: lightgreen;
   }
 `;
 
