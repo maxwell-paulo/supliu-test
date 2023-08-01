@@ -18,6 +18,26 @@ const api = {
       headers,
     });
   },
+
+  async deleteAlbum({ id }) {
+    return genericRequest(
+      axios.delete,
+      `https://tiao.supliu.com.br/api/album/${id}`,
+      {
+        headers,
+      }
+    );
+  },
+
+  async deleteTrack({ id }) {
+    return genericRequest(
+      axios.delete,
+      `https://tiao.supliu.com.br/api/track/${id}`,
+      {
+        headers,
+      }
+    );
+  },
 };
 
 export default api;

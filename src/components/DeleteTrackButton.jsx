@@ -1,5 +1,4 @@
-import axios from "axios";
-import { headers } from "../services";
+import { api } from "../services";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router";
 import { StyleDeleteButton } from "./StyledComponents";
@@ -9,9 +8,7 @@ function DeleteTrackButton({ id }) {
 
   async function handleDelete() {
     try {
-      await axios.delete(`https://tiao.supliu.com.br/api/track/${id}`, {
-        headers,
-      });
+      await api.deleteTrack({ id });
 
       navigate(0);
     } catch (error) {
