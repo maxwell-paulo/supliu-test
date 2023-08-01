@@ -1,4 +1,5 @@
 import axios from "axios";
+import { headers } from "../services";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import {
@@ -45,10 +46,7 @@ function CreateTrack() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const headers = {
-      Authorization: "maxpaulo.mps@gmail.com",
-      "Content-Type": "application/json",
-    };
+
     try {
       await axios.post("https://tiao.supliu.com.br/api/track/", track, {
         headers,

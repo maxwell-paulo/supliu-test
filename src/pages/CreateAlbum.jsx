@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { headers } from "../services";
 import {
   CreateBackground,
   CreateStyledContainer,
@@ -18,10 +19,7 @@ function CreateAlbum() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const headers = {
-      Authorization: "maxpaulo.mps@gmail.com",
-      "Content-Type": "application/json",
-    };
+
     try {
       await axios.post("https://tiao.supliu.com.br/api/album/", album, {
         headers,
