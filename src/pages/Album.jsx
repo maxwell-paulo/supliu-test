@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { api } from "../services";
 import { Mainbar } from "../components";
 import styled from "styled-components";
-import { DeleteAlbumButton, DeleteTrackButton } from "../components";
+import {
+  DeleteAlbumButton,
+  DeleteTrackButton,
+  AddTrackButton,
+} from "../components";
 
 const Background = styled.div`
   background-color: white;
@@ -62,6 +66,7 @@ function Album() {
     <>
       <Mainbar />
       <Background />
+
       <StyledContainer>
         <section>
           <h2>
@@ -94,6 +99,7 @@ function Album() {
               );
             })}
         </section>
+        <AddTrackButton />
       </StyledContainer>
     </>
   );
